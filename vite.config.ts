@@ -11,5 +11,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: import.meta.env.PROD ? '/blurify-simulateur-exclusion/' : '/'
+  base: process.env.NODE_ENV === 'production' ? '/blurify-simulateur-exclusion/' : './'
 })

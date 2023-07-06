@@ -1,7 +1,8 @@
-<script setup>
-import { ref, computed } from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+// BLURIFY
 import FaceDetection from '@/components/FaceDetection.vue'
 import { useDistanceStore } from '@/stores/distance'
 import { storeToRefs } from 'pinia'
@@ -38,12 +39,13 @@ const filter = computed(() => {
   </main>
 </template>
 
-<style>
+<style scoped>
 /** START DO NOT ERASE THIS -- NEEDED TO BLUR SCREEN */
 .filter {
   filter: blur(v-bind(filter));
 }
 /** END DO NOT ERASE THIS -- NEEDED TO BLUR SCREEN */
+
 header {
   line-height: 1.5;
   max-height: 100vh;
